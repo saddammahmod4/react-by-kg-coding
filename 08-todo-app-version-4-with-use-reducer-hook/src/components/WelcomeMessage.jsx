@@ -5,7 +5,6 @@ import { TodoItemsContext } from '../store/todo-items-store'
 function WelcomeMessage() {
 
   const { todoItems } = useContext(TodoItemsContext)
-  console.log("todoItems", todoItems)
 
   return (
     todoItems.length === 0 && <p className={styles.welcome}>Enjoy your day</p>
