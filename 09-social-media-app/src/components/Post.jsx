@@ -23,7 +23,7 @@ function Post({ post }) {
           <span className="badge text-bg-primary hashtag" key={tag}>{tag}</span>
         ))}
         <div className="alert alert-success reactions">
-          This post has been reacted by { post.reactions } people.
+          This post has been reacted by { post.reactions.likes } people.
         </div>
       </div>
     </div>
