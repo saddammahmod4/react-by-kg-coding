@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Sidebar({ selectedTab, setSelectedTab }) {
+function Sidebar() {
 
   return (
     <div
@@ -8,8 +9,8 @@ function Sidebar({ selectedTab, setSelectedTab }) {
       style={{width: "280px"}}
     >
       {" "}
-      <a
-        href="/"
+      <Link
+        to="/"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
         {" "}
@@ -17,13 +18,13 @@ function Sidebar({ selectedTab, setSelectedTab }) {
           <use xlinkHref="#bootstrap"></use>
         </svg>{" "}
         <span className="fs-4">Sidebar</span>{" "}
-      </a>{" "}
+      </Link>{" "}
       <hr />{" "}
       <ul className="nav nav-pills flex-column mb-auto">
         {" "}
-        <li className="nav-item" onClick={() => setSelectedTab("Home")}>
+        <li className="nav-item">
           {" "}
-          <a href="#" className={`nav-link text-white ${selectedTab === "Home" && 'active'}`} aria-current="page">
+          <a href="/" className="nav-link text-white" aria-current="page">
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -36,9 +37,9 @@ function Sidebar({ selectedTab, setSelectedTab }) {
             Home
           </a>{" "}
         </li>{" "}
-        <li  onClick={() => setSelectedTab("Create Post")}>
+        <li>
           {" "}
-          <a href="#" className={`nav-link text-white ${selectedTab === "Create Post" && 'active'}`}>
+          <Link to="/create-post" className="nav-link text-white">
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -49,7 +50,7 @@ function Sidebar({ selectedTab, setSelectedTab }) {
               <use xlinkHref="#speedometer2"></use>
             </svg>
             Create Post
-          </a>{" "}
+          </Link>{" "}
         </li>{" "}
       </ul>{" "}
       <hr />{" "}
