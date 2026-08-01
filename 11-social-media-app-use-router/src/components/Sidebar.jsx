@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
-
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
-      style={{width: "280px"}}
+      style={{ width: "280px" }}
     >
       {" "}
       <Link
@@ -14,7 +13,12 @@ function Sidebar() {
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
         {" "}
-        <svg className="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+        <svg
+          className="bi pe-none me-2"
+          width="40"
+          height="32"
+          aria-hidden="true"
+        >
           <use xlinkHref="#bootstrap"></use>
         </svg>{" "}
         <span className="fs-4">Sidebar</span>{" "}
@@ -24,33 +28,32 @@ function Sidebar() {
         {" "}
         <li className="nav-item">
           {" "}
-          <a href="/" className="nav-link text-white" aria-current="page">
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link text-white"
+            }
+          >
+            <svg className="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#home"></use>
             </svg>
             Home
-          </a>{" "}
+          </NavLink>
         </li>{" "}
         <li>
           {" "}
-          <Link to="/create-post" className="nav-link text-white">
-            {" "}
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
+          <NavLink
+            to="/create-post"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link text-white"
+            }
+          >
+            <svg className="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#speedometer2"></use>
             </svg>
             Create Post
-          </Link>{" "}
+          </NavLink>
         </li>{" "}
       </ul>{" "}
       <hr />{" "}
